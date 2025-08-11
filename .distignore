@@ -1,1 +1,6 @@
+.envrc
 .git
+.gitignore
+devenv.lock
+devenv.nix
+devenv.yaml
