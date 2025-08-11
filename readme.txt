@@ -1,4 +1,4 @@
-=== Circle Flags ===
+=== Country Flags ===
 Contributors: Benno Bielmeier
 Tags: Flags
 Requires at least: 6.0
@@ -8,7 +8,7 @@ Stable tag: 1.0.0
 License: EUPL-1.2
 License URI: https://joinup.ec.europa.eu/page/eupl-text-11-12
 
-Shortcode that renders SVG country flags (circle style).
+Shortcode that renders SVG country flags in circle style.
 
 == Description ==
 

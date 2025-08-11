@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Circle Flags
+ * Plugin Name: Country Flags
  * Description: Shortcode [flag country="de" size="64" alt="Germany"] that renders SVG country flags (circle style).
  * Version:     1.0.0
  * Author:      Benno Bielmeier
@@ -10,7 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; }
 
-final class CFS_Circle_Flags_Shortcode {
+final class CFS_Country_Flags_Shortcode {
 	const DEFAULT_SIZE = 64;
 	const MIN_SIZE     = 8;
 	const MAX_SIZE     = 1024;
@@ -114,7 +114,7 @@ final class CFS_Circle_Flags_Shortcode {
 	}
 }
 
-CFS_Circle_Flags_Shortcode::init();
+CFS_Country_Flags_Shortcode::init();
 
 /**
  * Small CSS helper for classic editor / front-end.
