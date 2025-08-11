@@ -8,3 +8,4 @@ devenv.nix
 devenv.yaml
 # We only have development dependencies
 vendor
+phpcs.xml
