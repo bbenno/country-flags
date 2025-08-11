@@ -1,0 +1,49 @@
+name: Build Plugin ZIP
+
+on:
+  push:
+    branches: [ master ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ master ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Derive plugin metadata
+        id: meta
+        shell: bash
+        run: |
+          SLUG="${GITHUB_REPOSITORY##*/}"
+
+          # Try to read Version from the main plugin file; fall back to short SHA.
+          VERSION="$(grep -R -m1 -E '^[[:space:]]*\*[[:space:]]*Version:[[:space:]]*' . \
+                    | sed -E 's/.*Version:[[:space:]]*([0-9A-Za-z._+-]+).*/\1/;q')"
+          if [ -z "$VERSION" ]; then VERSION="${GITHUB_SHA::7}"; fi
+
+          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Stage files for packaging
+        run: |
+          mkdir -p "dist/${{ steps.meta.outputs.slug }}"
+          # Use .distignore if present
+          if [ -f .distignore ]; then
+            rsync -a ./ "dist/${{ steps.meta.outputs.slug }}/" \
+              --delete --exclude-from='.distignore'
+          fi
+
+      - name: Upload artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.meta.outputs.slug }}-${{ steps.meta.outputs.version }}
+          path: dist
+          if-no-files-found: error
