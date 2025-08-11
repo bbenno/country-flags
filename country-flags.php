@@ -1,4 +1,9 @@
 <?php
+
+// SPDX-FileCopyrightText: 2025 Benno Bielmeier <git@bbenno.com>
+//
+// SPDX-License-Identifier: EUPL-1.2
+
 /**
  * Plugin Name: Country Flags
  * Description: Shortcode [flag country="de" size="64" alt="Germany"] that renders SVG country flags (circle style).

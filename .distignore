@@ -1,9 +1,16 @@
+# SPDX-FileCopyrightText: 2025 NONE
+#
+# SPDX-License-Identifier: CC0-1.0
+
 .editorconfig
 .envrc
 .git
 .gitignore
+composer.json.license
 composer.lock
+composer.lock.license
 devenv.lock
+devenv.lock.license
 devenv.nix
 devenv.yaml
 # We only have development dependencies
