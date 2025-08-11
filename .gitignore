@@ -1,3 +1,5 @@
+/vendor/
+
 # Devenv
 .devenv*
 devenv.local.nix

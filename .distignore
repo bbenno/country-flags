@@ -2,6 +2,9 @@
 .envrc
 .git
 .gitignore
+composer.lock
 devenv.lock
 devenv.nix
 devenv.yaml
+# We only have development dependencies
+vendor

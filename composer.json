@@ -1,0 +1,29 @@
+{
+    "name": "bbenno/circle-flags",
+    "type": "wordpress-plugin",
+    "description": "SVG country flags in circle style",
+    "license": "EUPL-1.2",
+    "authors": [
+        {
+            "name": "Benno Bielmeier",
+            "email": "git@bbenno.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.9",
+        "wp-coding-standards/wpcs": "^3.0",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "yoast/phpunit-polyfills": "^2.0"
+    },
+    "scripts": {
+        "cs": "phpcs",
+        "cbf": "phpcbf",
+        "test": "phpunit"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

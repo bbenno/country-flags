@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ruleset name="Circled Flags">
+  <file>circle-flags.php</file>
+  <rule ref="WordPress"/>
+  <rule ref="PHPCompatibility"/>
+  <config name="testVersion" value="8.0-"/>
+  <arg value="sp"/>
+</ruleset>
